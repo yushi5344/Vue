@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>键盘 Event</h1>
+        <label>姓名：</label>
+        <input type="text" v-on:keyup.enter="logName">
+        <label for="">年龄</label>
+        <input type="text" v-on:keyup.enter="logAge">
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#vue-app',
+        data:{
+
+        },
+        methods:{
+            logName:function () {
+                console.log('你正在输入姓名');
+            },
+            logAge:function () {
+                console.log('你正在输入年龄');
+            }
+        }
+    });
+</script>
