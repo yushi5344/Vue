@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <style>
+        #canvas{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>Events</h1>
+        <button @click="add(10)">加一岁</button>
+        <button v-on:click="substract(5)">减一岁</button>
+        <p>my age is {{age}}</p>
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{x}},{{y}}
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#vue-app',
+        data:{
+            age:30,
+            x:0,
+            y:0
+        },
+        methods:{
+            add:function (inc) {
+                this.age+=inc;
+            },
+            substract:function (dec) {
+                this.age-=dec;
+            },
+            updateXY:function (event) {
+                this.x=event.offsetX;
+                this.y=event.offsetY;
+            }
+        }
+    });
+</script>
