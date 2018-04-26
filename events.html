@@ -15,12 +15,15 @@
 <body>
     <div id="vue-app">
         <h1>Events</h1>
-        <button @click="add(10)">加一岁</button>
+        <button @click="add(1)">加一岁</button>
+        <button @click.once="add(10)">加十岁</button>
         <button v-on:click="substract(5)">减一岁</button>
         <p>my age is {{age}}</p>
         <div id="canvas" v-on:mousemove="updateXY">
-            {{x}},{{y}}
+            {{x}},{{y}} <span v-on:mousemove="stopMoving">Stop Moving </span>
+            <span v-on:mousemove.stop="">Stop Moving2 </span>
         </div>
+        <a v-on:click.prevent="hello" href="http://www.baidu.com">阻止跳转</a>
     </div>
 </body>
 </html>
@@ -42,6 +45,12 @@
             updateXY:function (event) {
                 this.x=event.offsetX;
                 this.y=event.offsetY;
+            },
+            stopMoving:function (event) {
+                event.stopPropagation();
+            },
+            hello:function () {
+                alert('hello');
             }
         }
     });
