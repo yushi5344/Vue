@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-for指令</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>v-for</h1>
+        <!--数组遍历-->
+        <ul>
+            <li v-for="item in characters">
+                {{item}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) in users">
+                {{index}}-{{item.name}}---{{item.age}}
+            </li>
+        </ul>
+        <template v-for="(user,index) in users">
+            <div v-for="(val,key) in user">
+                <p>{{key}}--{{val}}</p>
+            </div>
+        </template>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#vue-app',
+        data:{
+            characters:['Mario','Luffy','Yoshi'],
+            users:[
+                {name:'Henry',age:20},
+                {name:'bucky',age:24},
+                {name:'Emily',age:29}
+            ]
+        },
+        methods:{
+
+        },
+        computed:{
+
+        }
+    });
+</script>
