@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{title}}</h1>
-    <user></user>
+    <user v-bind:users="users"></user>
     <foot></foot>
   </div>
 </template>
@@ -14,7 +14,15 @@ export default {
   name: 'App',
   data (){
     return {
-      title:"这是我的第一个Vue脚手架项目"
+      title:"这是我的第一个Vue脚手架项目",
+      users:[
+        {name:"henrry",position:'Web开发',show:false},
+        {name:"henrry",position:'Web开发',show:false},
+        {name:"henrry",position:'Web开发',show:false},
+        {name:"henrry",position:'Web开发',show:false},
+        {name:"henrry",position:'Web开发',show:false},
+        {name:"henrry",position:'Web开发',show:false},
+      ]
     }
   },
   components:{

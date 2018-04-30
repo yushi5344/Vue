@@ -14,16 +14,16 @@
 <script>
   export default {
     name: 'user',
+    //props:["users"],
+    props:{
+      users:{
+        type:Array,
+        required:true
+      }
+    },
     data () {
       return {
-       users:[
-         {name:"henrry",position:'Web开发',show:false},
-         {name:"henrry",position:'Web开发',show:false},
-         {name:"henrry",position:'Web开发',show:false},
-         {name:"henrry",position:'Web开发',show:false},
-         {name:"henrry",position:'Web开发',show:false},
-         {name:"henrry",position:'Web开发',show:false},
-       ]
+
       }
     }
   }
