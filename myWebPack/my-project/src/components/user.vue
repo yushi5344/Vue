@@ -1,5 +1,6 @@
 <template>
   <div class="user">
+    <h1>Helloween Users</h1>
     <ul>
       <li v-for="user in users">
         {{user}}
@@ -22,8 +23,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1, h2 {
+  h1 {
     font-weight: normal;
+    color:purple;
   }
   ul {
     list-style-type: none;
