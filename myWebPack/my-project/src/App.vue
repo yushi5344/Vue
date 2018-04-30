@@ -3,11 +3,13 @@
     <img src="./assets/logo.png">
     <h1>{{title}}</h1>
     <user></user>
+    <foot></foot>
   </div>
 </template>
 
 <script>
   import user from './components/user'
+  import foot from './components/footer'
 export default {
   name: 'App',
   data (){
@@ -16,7 +18,8 @@ export default {
     }
   },
   components:{
-    "user":user
+    "user":user,
+    'foot':foot
   }
 }
 </script>
