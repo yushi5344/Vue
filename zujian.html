@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app-one">
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-two">
+        <greeting></greeting>
+    </div>
+</body>
+</html>
+<script>
+    Vue.component('greeting',{
+        template:'<p>{{name}}大家好<button v-on:click="changeName">改名</button></p>',
+        data:function () {
+            return {
+                name:'百度'
+            }
+        },
+        methods:{
+            changeName:function () {
+                this.name='Herry';
+            }
+        }
+    });
+    new Vue({
+        el:'#vue-app-one'
+    });
+    new Vue({
+        el:'#vue-app-two'
+    })
+</script>
