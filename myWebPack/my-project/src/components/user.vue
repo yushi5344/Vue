@@ -7,7 +7,7 @@
         <h3 v-show="user.show">{{user.position}}</h3>
       </li>
     </ul>
-
+    <button v-on:click="deleteUser">删除</button>
   </div>
 </template>
 
@@ -24,6 +24,11 @@
     data () {
       return {
 
+      }
+    },
+    methods:{
+      deleteUser:function () {
+        this.users.pop();
       }
     }
   }

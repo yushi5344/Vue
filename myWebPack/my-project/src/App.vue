@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <h1>{{title}}</h1>
     <user v-bind:users="users"></user>
+    <user v-bind:users="users"></user>
     <foot></foot>
   </div>
 </template>
