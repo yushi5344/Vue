@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例化多个对象</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>初始化多个Vue实例对象</h1>
+    <div id="vue-app-one">
+        {{title}}
+        {{greet}}
+    </div>
+    <div id="vue-app-two">
+        {{title}}
+        {{greet}}
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:'#vue-app-one',
+        data:{
+            title:'vue-app-one'
+        },
+        computed:{
+            greet:function () {
+                return 'hello one';
+            }
+        }
+    });
+    new Vue({
+        el:'#vue-app-two',
+        data:{
+            title:'vue-app-two'
+        },
+        computed:{
+            greet:function () {
+                return 'hello two';
+            }
+        }
+    });
+</script>
