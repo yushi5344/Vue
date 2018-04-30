@@ -3,8 +3,7 @@
     <img src="./assets/logo.png">
     <h1>{{title}}</h1>
     <user v-bind:users="users"></user>
-    <user v-bind:users="users"></user>
-    <foot></foot>
+    <foot v-on:titltChanged="updateTitle($event)"></foot>
   </div>
 </template>
 
@@ -29,6 +28,11 @@ export default {
   components:{
     "user":user,
     'foot':foot
+  },
+  methods:{
+    updateTitle(title){
+      this.title=title;
+    }
   }
 }
 </script>
