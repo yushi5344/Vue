@@ -1,13 +1,23 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <h1>{{title}}</h1>
+    <user></user>
   </div>
 </template>
 
 <script>
+  import user from './components/user'
 export default {
-  name: 'App'
+  name: 'App',
+  data (){
+    return {
+      title:"这是我的第一个Vue脚手架项目"
+    }
+  },
+  components:{
+    "user":user
+  }
 }
 </script>
 
