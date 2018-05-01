@@ -15,14 +15,7 @@ export default {
   data (){
     return {
       title:"这是我的第一个Vue脚手架项目",
-      users:[
-        {name:"henrry",position:'Web开发',show:false},
-        {name:"henrry",position:'Web开发',show:false},
-        {name:"henrry",position:'Web开发',show:false},
-        {name:"henrry",position:'Web开发',show:false},
-        {name:"henrry",position:'Web开发',show:false},
-        {name:"henrry",position:'Web开发',show:false},
-      ]
+      users:[],
     }
   },
   components:{
@@ -33,6 +26,12 @@ export default {
     updateTitle(title){
       this.title=title;
     }
+  },
+  created(){
+    this.$http.get('http://jsonplaceholder.typicode.com/users'
+    ).then((data)=>{
+      this.users=data.body;
+    });
   }
 }
 </script>
