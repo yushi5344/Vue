@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="hdcms">
+        <li v-for="v in comments">
+            {{v.content}}
+        </li>
+        <textarea v-model="current_comment" id="" cols="30" rows="10"></textarea><br>
+        <button v-on:click="push">发表</button>
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            data:{
+                current_comment:'',
+                comments:[
+                    {content:'aa'},
+                    {content:'bb'},
+                ]
+            },
+            methods:{
+                push(){
+                    var content={content:this.current_comment};
+                    this.comments.push(content);
+                    this.current_comment='';
+                },
+                search(){
+                    this.comments=this.comments.filter((item)=>{
+                        var reg=new RegExp(this.search_content);
+                        return reg.test(item.content);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

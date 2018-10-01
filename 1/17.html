@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="hdcms">
+        <input type="text" @keyup.enter="keyEvent">
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            data:{},
+            methods:{
+                keyEvent(){
+                    alert(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
