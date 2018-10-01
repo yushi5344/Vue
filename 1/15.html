@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="hdcms">
+        <li v-for="v in stus">
+            {{v.name}}-{{v.sex}}
+        </li>
+        {{type}}
+        <tr></tr>
+        <input type="radio" v-model="type" value="male">男
+        <input type="radio" v-model="type" value="female"> 女
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            computed:{
+                stus(){
+                    if (this.type=='all'){
+                        return this.user;
+                    }else{
+                        return this.user.filter((v)=>{
+                            return v.sex==this.type;
+                        });
+                    }
+                }
+            },
+            data:{
+                type:'all',
+                user:[
+                    {name:'aa',age:22,sex:'male'},
+                    {name:'bb',age:23,sex:'female'},
+                    {name:'cc',age:24,sex:'male'},
+                    {name:'dd',age:25,sex:'female'}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

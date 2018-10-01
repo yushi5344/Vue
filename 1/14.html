@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="hdcms">
+        <li v-for="(item,key,index) in user">
+            {{index}}-- {{key}}--{{item}}
+        </li>
+        <table border="1" width="100%">
+            <tr v-for="v in 20">
+                <td>{{v}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            data:{
+                user:{
+                    name:'aa',
+                    age:22,
+                    sex:'male'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
