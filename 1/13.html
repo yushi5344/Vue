@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<style>
+    .green{
+        color: green;
+    }
+    .color{
+        color: red;
+    }
+    .font{
+        font-size:100px;
+    }
+</style>
+<body>
+    <div id="hdcms">
+        <template v-if="regType=='mail'">
+            邮箱：<input type="email" name="username" key="mail-username">
+        </template>
+        <template v-else>
+            手机：<input type="number" name="username" key="phone-username">
+        </template>
+        <br>
+        <input type="radio" value="mail" v-model="regType">邮箱注册
+        <input type="radio" value="phone" v-model="regType">手机注册
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            data:{
+                regType:'mail'
+            }
+        });
+    </script>
+</body>
+</html>

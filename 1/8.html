@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+    <div id="hdcms">
+        <input type="text" v-model="word">
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            watch:{
+                word:_.debounce(
+                    function (newV,oldV) {
+                        console.log(newV+'/'+oldV);
+                    },500
+                )
+            },
+            data:{
+                word:''
+            }
+        });
+    </script>
+</body>
+</html>

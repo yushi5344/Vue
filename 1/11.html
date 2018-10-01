@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<style>
+    .green{
+        color: green;
+    }
+    .color{
+        color: red;
+    }
+    .font{
+        font-size:100px;
+    }
+</style>
+<body>
+    <div id="hdcms">
+        <h1 class="green" :class="hd">后端认</h1>
+        <hr>
+        <h1 :class="[success,font]">www.houdun.com</h1>
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            data:{
+                hd:{color:true,font:true},
+                success:'color',
+                font:'font'
+            }
+        });
+    </script>
+</body>
+</html>

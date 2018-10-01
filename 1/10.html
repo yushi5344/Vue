@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="hdcms">
+        <input type="text" v-model="word">
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            watch:{
+                word:function (newV,oldV) {
+                    console.log(newV+'/'+oldV);
+                }
+            },
+            data:{
+                word:''
+            }
+        });
+    </script>
+</body>
+</html>

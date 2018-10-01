@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="hdcms">
+        {{sum}}
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#hdcms',
+            computed:{
+//                sum:function () { //ES5语法
+//                    return this.n1+this.n2;
+//                }
+                sum(){   //ES6语法
+                   return this.n1+this.n2;
+                }
+            },
+            data:{
+                n1:1,
+                n2:2
+            }
+        });
+    </script>
+</body>
+</html>
